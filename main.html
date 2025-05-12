@@ -7,10 +7,31 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
-    <script type="text/javascript" src="./script.js">
-</script>
+	 <script>
+      function firstNonRepeatedChar(str) {
+        const charCount = {};
 
-</body>
+        for (let char of str) {
+          charCount[char] = (charCount[char] || 0) + 1;
+        }
 
+        for (let char of str) {
+          if (charCount[char] === 1) {
+            return char;
+          }
+        }
+
+        return null;
+      }
+
+      const input = prompt("Enter a string:");
+      const result = firstNonRepeatedChar(input);
+
+      if (result === null) {
+        alert("No non-repeated character found.");
+      } else {
+        alert("First non-repeated character is: " + result);
+      }
+    </script>
+  </body>
 </html>
